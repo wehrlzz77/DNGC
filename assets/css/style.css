@@ -55,7 +55,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Fjalla One", "Raleway", sans-serif;
   margin: 0 0 15px;
   color: #595959;
   font-weight: 500;
@@ -705,6 +705,10 @@ div#preloader {
   display: block;
 }
 
+/* .single-well a img {
+  max-height: 330px;
+} */
+
 .single-well ul li {
   color: #595959;
   display: block;
@@ -720,6 +724,8 @@ div#preloader {
 .single-well p {
   color: #595959;
 }
+
+
 
 /*--------------------------------------------------------------
 # Services
@@ -1589,30 +1595,30 @@ div#preloader {
 }
 
 /*--------------------------------------------------------------
-# Blog
+# events
 --------------------------------------------------------------*/
-.blog-area {
+.events-area {
   height: auto;
   width: 100%;
 }
 
-.blog-text h4 a {
+.events-text h4 a {
   color: #595959;
   text-decoration: none;
 }
 
-.blog-text h4 {
+.events-text h4 {
   color: #595959;
   margin-bottom: 15px;
 }
 
-.blog-btn {
+.events-btn {
   border-bottom: 1px dotted #595959;
   color: #595959;
   text-decoration: none;
 }
 
-.blog-btn {
+.events-btn {
   border-bottom: 1px dotted #595959;
   color: #595959;
   display: inline-block;
@@ -1621,11 +1627,11 @@ div#preloader {
   text-decoration: none;
 }
 
-.blog-btn {
+.events-btn {
   position: relative;
 }
 
-.blog-btn::after {
+.events-btn::after {
   content: "\f178";
   font-family: fontawesome;
   position: absolute;
@@ -1634,57 +1640,57 @@ div#preloader {
   transition: all 0.3s ease 0s;
 }
 
-.blog-btn:hover::after {
+.events-btn:hover::after {
   right: -30px;
 }
 
-.blog-btn:hover {
+.events-btn:hover {
   color: #333;
   text-decoration: none;
 }
 
-.blog_meta span.date_type i {
+.events_meta span.date_type i {
   margin-left: 5px;
 }
 
-.blog-meta span.comments-type {
+.events-meta span.comments-type {
   margin-left: 5px;
 }
 
-.blog-meta span i {
+.events-meta span i {
   padding-right: 10px;
 }
 
-.blog-content .blog-meta {
+.events-content .events-meta {
   border-bottom: 1px dotted #333;
 }
 
-.blog-meta {
+.events-meta {
   border-bottom: 1px dotted #f2eedf;
   padding: 10px 0;
 }
 
 .comments-type>a,
 .date-type,
-.blog-meta span.comments-type {
+.events-meta span.comments-type {
   color: #333;
   letter-spacing: 1px;
   margin-right: 5px;
 }
 
-.blog-meta .comments-type i {
+.events-meta .comments-type i {
   padding-right: 0 !important;
 }
 
-.blog-content-right .comments-type>a,
-.blog-content-right .date-type,
-.blog-content-right .blog-meta span.comments-type,
-.blog-content-right .blog-text p {
+.events-content-right .comments-type>a,
+.events-content-right .date-type,
+.events-content-right .events-meta span.comments-type,
+.events-content-right .events-text p {
   color: #f2eedf;
   letter-spacing: 1px;
 }
 
-.single-blog .ready-btn {
+.single-events .ready-btn {
   border: 1px solid #595959;
   border-radius: 30px;
   color: #595959;
@@ -1699,19 +1705,19 @@ div#preloader {
   transition: all 0.4s ease 0s;
 }
 
-.single-blog .ready-btn:hover {
+.single-events .ready-btn:hover {
   border: 1px solid #aabda0;
   color: #f2eedf;
 }
 
 /*--------------------------------------------------------------
-# Blog page
+# events page
 --------------------------------------------------------------*/
 .page-area {
   position: relative;
 }
 
-.blog-page .banner-box {
+.events-page .banner-box {
   margin-bottom: 40px;
 }
 
@@ -1738,7 +1744,7 @@ div#preloader {
   color: #aabda0;
 }
 
-.left-blog h4 {
+.left-events h4 {
   border-bottom: 1px solid #ddd;
   color: #595959;
   font-size: 17px;
@@ -1748,19 +1754,19 @@ div#preloader {
   text-transform: uppercase;
 }
 
-.left-blog {
+.left-events {
   background: #f9f9f9 none repeat scroll 0 0;
   margin-bottom: 30px;
   overflow: hidden;
   padding-bottom: 20px;
 }
 
-.left-blog li {
+.left-events li {
   border-bottom: 1px solid #ddd;
   display: block;
 }
 
-.left-blog ul li a {
+.left-events ul li a {
   color: #595959;
   display: block;
   font-size: 14px;
@@ -1812,11 +1818,11 @@ div#preloader {
 }
 
 .pst-content p a:hover,
-.left-blog ul li a:hover {
+.left-events ul li a:hover {
   color: #aabda0;
 }
 
-.blog-page .single-blog {
+.events-page .single-events {
   margin-bottom: 40px;
 }
 
@@ -1830,23 +1836,23 @@ div#preloader {
   color: #f2eedf;
 }
 
-.blog-tags {
+.events-tags {
   padding: 1px 0;
 }
 
-.left-blog li:last-child {
+.left-events li:last-child {
   border-bottom: 0;
 }
 
-.popular-tag.left-blog ul li a:hover {
+.popular-tag.left-events ul li a:hover {
   color: #f2eedf;
 }
 
-.popular-tag.left-side-tags.left-blog ul {
+.popular-tag.left-side-tags.left-events ul {
   padding: 0 10px;
 }
 
-.blog-1 .banner-box {
+.events-1 .banner-box {
   margin-bottom: 30px;
 }
 
@@ -1864,7 +1870,7 @@ div#preloader {
 }
 
 /*--------------------------------------------------------------
-# Blog Details
+# events Details
 --------------------------------------------------------------*/
 .post-information h2 {
   color: #363636;
@@ -1963,12 +1969,12 @@ div#preloader {
   border: 1px solid #aabda0;
 }
 
-.single-blog .author-avatar {
+.single-events .author-avatar {
   float: left;
   margin-right: 10px;
 }
 
-.single-blog .author-description h2 {
+.single-events .author-description h2 {
   font-size: 18px;
   margin: 0;
   padding: 0 0 5px;
@@ -2118,7 +2124,7 @@ span.email-notes {
   background: #aabda0;
 }
 
-.single-blog .blog-pagination {
+.single-events .events-pagination {
   border-top: 1px solid #e5e5e5;
   margin: 0;
   padding-top: 30px;
@@ -2146,6 +2152,10 @@ span.email-notes {
 
 .footer-logo {
   padding-bottom: 20px;
+}
+
+.footer-logo a img {
+  max-height: 200px;
 }
 
 .footer-logo h2 {
@@ -2503,7 +2513,7 @@ span.email-notes {
     float: none;
   }
 
-  .single-blog {
+  .single-events {
     margin-bottom: 30px;
   }
 
@@ -2560,7 +2570,7 @@ span.email-notes {
     width: 40px;
   }
 
-  .blog-post-dlc ul li {
+  .events-post-dlc ul li {
     padding-left: 20px;
     padding-right: 20px;
   }
