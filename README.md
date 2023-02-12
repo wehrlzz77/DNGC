@@ -10,7 +10,7 @@ Subject: #aabda0
 
 Hero
 About
-Services
+Services - Removed
 Team
 Testimonials - Removed
 Latest News - Removed

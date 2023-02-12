@@ -202,6 +202,10 @@ div#preloader {
   padding: 70px 0px 50px;
 }
 
+.area-padding-3 {
+  padding: 0px 0px 50px;
+}
+
 .padding-2 {
   padding-bottom: 90px;
 }
@@ -228,6 +232,16 @@ div#preloader {
 
 .sec-head {
   display: inline-block;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0;
+  padding: 0 0 10px;
+  text-transform: uppercase;
+  transition: all 0.4s ease 0s;
+}
+
+.sec-sub-head {
+  display: inline-block;
   font-size: 17px;
   font-weight: 600;
   margin-bottom: 0;
@@ -236,11 +250,20 @@ div#preloader {
   transition: all 0.4s ease 0s;
 }
 
+.sec-sub-sub-head {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 0;
+  padding: 0 0 10px;
+  transition: all 0.4s ease 0s;
+}
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
 #header {
-  height: 80px;
+  height: 110px;
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
@@ -249,7 +272,7 @@ div#preloader {
 
 #header.header-scrolled {
   background: rgba(242, 238, 223, 1);
-  height: 64px;
+  height: 80px;
 }
 
 #header .logo h1 {
@@ -273,17 +296,29 @@ div#preloader {
 #header .logo img {
   padding: 0;
   margin: 0;
+  max-height: 100px;
+}
+
+#header.header-scrolled .logo img {
+  padding: 0;
+  margin: 0;
   max-height: 70px;
 }
 
 @media (max-width: 768px) {
   #header {
-    height: 64px;
+    height: 90px;
     background: rgba(242, 238, 223, 1);
   }
 
   #header .logo h1 {
     font-size: 28px;
+  }
+
+  #header .logo img {
+    padding: 0;
+    margin: 0;
+    max-height: 80px;
   }
 }
 
@@ -433,7 +468,7 @@ div#preloader {
 * Mobile Navigation 
 */
 .mobile-nav-toggle {
-  color: #f2eedf;
+  color: #595959;
   font-size: 28px;
   cursor: pointer;
   display: none;
@@ -914,7 +949,7 @@ div#preloader {
 
 .team-social-icon {
   left: 50%;
-  margin-left: -61px;
+  margin-left: -16px;
   opacity: 0;
   position: absolute;
   top: 30%;
@@ -2134,7 +2169,7 @@ span.email-notes {
 # Footer
 --------------------------------------------------------------*/
 .footer-area {
-  padding: 40px 0;
+  padding: 10px 0;
   background: #f9f9f9;
 }
 
@@ -2155,7 +2190,8 @@ span.email-notes {
 }
 
 .footer-logo a img {
-  max-height: 200px;
+  max-height: 100px;
+  text-align: right;
 }
 
 .footer-logo h2 {
@@ -2176,15 +2212,15 @@ span.email-notes {
 }
 
 .footer-icons ul li a {
-  border: 1px solid #595959;
+  border: 4px solid #595959;
   color: #595959;
   display: block;
-  font-size: 16px;
-  height: 40px;
-  line-height: 38px;
+  font-size: 36px;
+  height: 60px;
+  line-height: 58px;
   margin-right: 5px;
   text-align: center;
-  width: 40px;
+  width: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
