@@ -12,7 +12,7 @@ $(document).ready(function () {
   
         $.ajax({
             type: "POST",
-            url: "https://radcraftsman.ca/form/contact.php",
+            url: "https://downnorthgarlic.com/forms/contact.php",
             data: formData,
             dataType: "json",
             encode: true,

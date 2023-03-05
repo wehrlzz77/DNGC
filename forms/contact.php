@@ -6,9 +6,11 @@ if($_POST) {
     $email_subject = "Website Inquiry: General Contact Form!";
     $subject = "";
     $message = "";
-    $recipient = "chaswehrlzz@gmail.com";
+    $recipient = "andrew@downnorthgarlic.com";
     $data = [];
-     
+
+    $email_body = "<div>";
+
     if(isset($_POST['name'])) {
         $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
         $email_body .= "<div>
