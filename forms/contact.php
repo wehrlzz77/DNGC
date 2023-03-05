@@ -6,7 +6,8 @@ if($_POST) {
     $email_subject = "Website Inquiry: General Contact Form!";
     $subject = "";
     $message = "";
-    $recipient = "andrew@downnorthgarlic.com";
+    // $recipient = "andrew@downnorthgarlic.com";
+    $recipient = "andrew.russell19@gmail.com";
     $data = [];
 
     $email_body = "<div>";
