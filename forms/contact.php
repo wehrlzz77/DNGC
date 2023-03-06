@@ -1,14 +1,34 @@
 <?php
- 
+
+use PHPMailer\PHPMailer\PHPMailer;
+require '/opt/cpanel/composer/bin/composer/composer/vendor/autoload.php';
+
 if($_POST) {
-    $name = "";
-    $email = "";
-    $email_subject = "Website Inquiry: General Contact Form!";
-    $subject = "";
-    $message = "";
-    // $recipient = "andrew@downnorthgarlic.com";
-    $recipient = "andrew.russell19@gmail.com";
-    $data = [];
+    // $name = "";
+    // $email = "";
+    // $email_subject = "Website Inquiry: General Contact Form!";
+    // $subject = "";
+    // $message = "";
+    // // $recipient = "andrew@downnorthgarlic.com";
+    // $recipient = "andrew.russell19@gmail.com";
+    // $data = [];
+
+    $mail = new PHPMailer();
+
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'andrew@downnorthgarlic.com';
+    $mail->Password = 'Andyrussell1';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 25;
+
+    $mail->setFrom('contact@downnorthgarlic.com', 'Web Contact Form');
+    $mail->addReplyTo('contact@downnorthgarlic.com', 'Web Contact Form');
+
+    $mail->addAddress('andrew@downnorthgarlic.com');
+    $mail->Subject = 'Website Inquiry: General Contact Form!';
+    $mail->isHTML(true);
 
     $email_body = "<div>";
 
@@ -44,19 +64,31 @@ if($_POST) {
      
     $email_body .= "</div>";
 
-    $headers  = 'MIME-Version: 1.0' . "\r\n"
-    .'Content-type: text/html; charset=utf-8' . "\r\n"
-    .'From: ' . $email . "\r\n";
+    $mail->Body = $email_body;
+
+    // $headers  = 'MIME-Version: 1.0' . "\r\n"
+    // .'Content-type: text/html; charset=utf-8' . "\r\n"
+    // .'From: ' . $email . "\r\n";
      
-    if(mail($recipient, $email_subject, $email_body, $headers)) {
-        $data['success'] = true;
-        $data['message'] = "Thank you for contacting us, $name. You will get a reply within 24 hours";
-        echo json_encode($data);
-    } else {
+    if(!$mail->send()) {
         $data['success'] = false;
         $data['message'] = "We are sorry but the email did not go through, please try again";
         echo json_encode($data);
+    } else {
+        $data['success'] = true;
+        $data['message'] = "Thank you for contacting us, $name. You will get a reply within 24 hours";
+        echo json_encode($data);
     }
+
+    // if(mail($recipient, $email_subject, $email_body, $headers)) {
+    //     $data['success'] = true;
+    //     $data['message'] = "Thank you for contacting us, $name. You will get a reply within 24 hours";
+    //     echo json_encode($data);
+    // } else {
+    //     $data['success'] = false;
+    //     $data['message'] = "We are sorry but the email did not go through, please try again";
+    //     echo json_encode($data);
+    // }
      
 } else {
     $data['success'] = false;
