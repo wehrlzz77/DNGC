@@ -17,7 +17,10 @@ $(document).ready(function () {
             dataType: "json",
             encode: true,
             success: function(data) { console.log("success") },
-            error: function(ts) { console.log("failed") }
+            error: function(ts) {
+                console.log("failed") 
+                console.log(ts)
+            }
         }).done(function (data) {
             console.log(data);
 
