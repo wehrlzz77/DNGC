@@ -1,19 +1,27 @@
 $(document).ready(function() {
     $('.php-email-form').submit(function(e) {
         e.preventDefault();
-        var form = $(this);
-        var formData = form.serialize();
+        // Get the form data
+        var formData = $(this).serialize();
+        console.log(formData);
+
+        // Send an AJAX request to the contact.php file
         $.ajax({
-            type: 'POST',
-            url: 'forms/contact.php',
+            type: "POST",
+            url: "contact.php",
             data: formData,
             success: function(response) {
-                alert('Your message was sent!');
-                form.trigger('reset');
+                if (response == "success") {
+                // Do something on success
+                console.log("Email sent successfully.");
+                } else {
+                // Log the error message to the console
+                console.log(response);
+                }
             },
             error: function(xhr, status, error) {
-                console.log(xhr.responseText);
-                alert('There was an error sending your message. Please try again later.');
+                // Log the error message to the console
+                console.log(error);
             }
         });
     });

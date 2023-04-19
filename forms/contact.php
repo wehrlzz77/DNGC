@@ -3,29 +3,42 @@
 use PHPMailer\PHPMailer\PHPMailer;
 require __DIR__ . '/vendor/autoload.php';
 
-// Instantiate PHPMailer
-$mail = new PHPMailer;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-// Set up SMTP
-$mail->isSMTP();
-$mail->Host = 'smtp.gmail.com';
-$mail->SMTPAuth = true;
-$mail->Username = 'wehrlzz77@gmail.com'; // Replace with your own email address
-$mail->Password = 'Lucille77'; // Replace with your own password
-$mail->SMTPSecure = 'tls';
-$mail->Port = 587;
+    // Get the form fields and sanitize the input
+    $name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+    $subject = filter_var($_POST["subject"], FILTER_SANITIZE_STRING);
+    $message = filter_var($_POST["message"], FILTER_SANITIZE_STRING);
 
-// Set up email content
-$mail->setFrom($_POST['email'], $_POST['name']);
-$mail->addAddress('andrew@downnorthgarlic.com'); // Replace with your own email address
-$mail->Subject = $_POST['subject'];
-$mail->Body = $_POST['message'];
+    // Initialize the PHPMailer object
+    $mail = new PHPMailer(true);
 
-// Send the email
-if(!$mail->send()) {
-  echo 'Mailer Error: ' . $mail->ErrorInfo;
-} else {
-  echo 'Message sent!';
+    try {
+        // Set up SMTP
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'wehrlzz77@gmail.com'; // Replace with your own email address
+        $mail->Password = 'Lucille77'; // Replace with your own password
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 587;
+
+        // Set up message data
+        $mail->setFrom($email, $name);
+        $mail->addAddress('recipient@example.com', 'Recipient Name');
+        $mail->addReplyTo($email, $name);
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body = $message;
+
+        // Send the email
+        $mail->send();
+
+        echo "success";
+    } catch (Exception $e) {
+        echo $e->getMessage();
+    }
 }
 
 ?>
