@@ -4,15 +4,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 require __DIR__ . '/vendor/autoload.php';
 
 if($_POST) {
-    // $name = "";
-    // $email = "";
-    // $email_subject = "Website Inquiry: General Contact Form!";
-    // $subject = "";
-    // $message = "";
-    // // $recipient = "andrew@downnorthgarlic.com";
-    // $recipient = "andrew.russell19@gmail.com";
-    // $data = [];
-
     $mail = new PHPMailer();
 
     $mail->isSMTP();
@@ -66,12 +57,11 @@ if($_POST) {
 
     $mail->Body = $email_body;
 
-    $mail->SMTPDebug = 2;
+    $mail->SMTPDebug = 4;
 
     // $headers  = 'MIME-Version: 1.0' . "\r\n"
     // .'Content-type: text/html; charset=utf-8' . "\r\n"
     // .'From: ' . $email . "\r\n";
-    echo ("What the fuck");
     if(!$mail->send()) {
         $data['success'] = false;
         // $data['message'] = "We are sorry but the email did not go through, please try again";

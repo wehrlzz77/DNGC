@@ -16,31 +16,27 @@ $(document).ready(function () {
             data: formData,
             dataType: "json",
             encode: true,
-            success: function(data) { console.log("success") },
+            success: function(data) {
+                console.log("success")
+                if (!data.success) {
+                    console.log(data);
+                    $("form").html(
+                        '<div class="alert alert-danger">Form inputs were wrong, please try again.</div>'
+                    );
+                } else {
+                    $("form").html(
+                        '<div class="alert alert-success">' + data.message + "</div>"
+                    );
+                }
+            },
             error: function(ts) {
                 console.log("failed") 
                 console.log(ts)
-            }
-        }).done(function (data) {
-            console.log(data);
-
-            if (!data.success) {
-                console.log(data);
                 $("form").html(
-                    '<div class="alert alert-danger">Form inputs were wrong, please try again.</div>'
-                );
-            } else {
-                $("form").html(
-                    '<div class="alert alert-success">' + data.message + "</div>"
+                    '<div class="alert alert-danger">Could not reach server, please try again later.</div>'
                 );
             }
         })
-        .fail(function (data) {
-            console.log(data);
-            $("form").html(
-                '<div class="alert alert-danger">Could not reach server, please try again later.</div>'
-            );
-        });
 
         event.preventDefault();
     });
