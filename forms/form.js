@@ -29,9 +29,11 @@ $(document).ready(function () {
                     );
                 }
             },
-            error: function(ts) {
-                console.log("failed") 
-                console.log(ts)
+            error: function(xhr, status, error) {
+                console.log("failed1") 
+                console.log(xhr)
+                console.log(status)
+                console.log(error)
                 $("form").html(
                     '<div class="alert alert-danger">Could not reach server, please try again later.</div>'
                 );
