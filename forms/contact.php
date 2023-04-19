@@ -19,7 +19,7 @@ if($_POST) {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'andrew@downnorthgarlic.com';
+        $mail->Username = 'andrew@downnortdhgarlic.com';
         $mail->Password = 'Andyrussell1';
         $mail->SMTPSecure = 'tls';
         $mail->Port = 25;
