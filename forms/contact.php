@@ -17,6 +17,8 @@ if($_POST) {
         $mail = new PHPMailer();
 
         $mail->isSMTP();
+        $mail->SMTPDebug = 4;
+        $mail->Debugoutput = 'html';
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'andrew@downnortdhgarlic.com';
