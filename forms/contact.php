@@ -1,7 +1,7 @@
 <?php
 
 use PHPMailer\PHPMailer\PHPMailer;
-require '/opt/cpanel/composer/bin/composer/composer/vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 if($_POST) {
     // $name = "";
@@ -66,13 +66,16 @@ if($_POST) {
 
     $mail->Body = $email_body;
 
+    $mail->SMTPDebug = 3;
+
     // $headers  = 'MIME-Version: 1.0' . "\r\n"
     // .'Content-type: text/html; charset=utf-8' . "\r\n"
     // .'From: ' . $email . "\r\n";
-     
+    echo ("What the fuck");
     if(!$mail->send()) {
         $data['success'] = false;
-        $data['message'] = "We are sorry but the email did not go through, please try again";
+        // $data['message'] = "We are sorry but the email did not go through, please try again";
+        $data['message'] = 'Mailer Error: ' . $mail->ErrorInfo;
         echo json_encode($data);
     } else {
         $data['success'] = true;
